@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 16:38:43 by eburnet           #+#    #+#             */
-/*   Updated: 2025/03/26 14:50:45 by eburnet          ###   ########.fr       */
+/*   Updated: 2025/03/26 15:37:54 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ class Bureaucrat;
 
 class Form
 {
-	private:
+	protected:
 		std::string const name;
 		bool is_signed;
 		int const grade_exec;

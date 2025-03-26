@@ -6,14 +6,14 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 09:34:44 by eburnet           #+#    #+#             */
-/*   Updated: 2025/03/26 13:59:24 by eburnet          ###   ########.fr       */
+/*   Updated: 2025/03/26 16:06:31 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include "string"
 #include <iostream>
-#include "Form.hpp"
+#include "AForm.hpp"
 
 class Bureaucrat
 {
