@@ -6,7 +6,7 @@
 #    By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/03 11:48:21 by eburnet           #+#    #+#              #
-#    Updated: 2025/03/26 14:48:12 by eburnet          ###   ########.fr        #
+#    Updated: 2025/03/27 14:55:07 by eburnet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ clean:
 	rm -f $(OBJS)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) home_shrubbery.txt
 
 re: fclean all
 

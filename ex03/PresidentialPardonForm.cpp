@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:55:58 by eburnet           #+#    #+#             */
-/*   Updated: 2025/03/27 14:42:18 by eburnet          ###   ########.fr       */
+/*   Updated: 2025/03/27 16:26:18 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 PresidentialPardonForm::PresidentialPardonForm(std::string _target) : AForm(5, 25, "PresidentialPardonForm")
 {
 	this->target = _target;
-	
 }
 
 PresidentialPardonForm::~PresidentialPardonForm()
