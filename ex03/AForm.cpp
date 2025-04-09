@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 16:38:47 by eburnet           #+#    #+#             */
-/*   Updated: 2025/03/27 13:56:26 by eburnet          ###   ########.fr       */
+/*   Updated: 2025/04/09 10:31:42 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ AForm::AForm(const AForm &other) : name(other.name), grade_exec(other.grade_exec
 
 AForm& AForm::operator=(const AForm &other)
 {
+	if (this == &other)
+		return (*this);
 	this->is_signed = other.is_signed;
 	return (*this);
 }

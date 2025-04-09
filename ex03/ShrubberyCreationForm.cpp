@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:56:25 by eburnet           #+#    #+#             */
-/*   Updated: 2025/03/27 14:17:38 by eburnet          ###   ########.fr       */
+/*   Updated: 2025/04/09 10:32:19 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other)
 
 ShrubberyCreationForm & ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other)
 {
+	if (this == &other)
+		return (*this);
 	this->target = other.target;
 	this->is_signed = other.is_signed;
 	return (*this);

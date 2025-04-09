@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:56:21 by eburnet           #+#    #+#             */
-/*   Updated: 2025/03/27 14:40:07 by eburnet          ###   ########.fr       */
+/*   Updated: 2025/04/09 10:32:16 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other) : AFo
 
 RobotomyRequestForm & RobotomyRequestForm::operator=(const RobotomyRequestForm &other)
 {
+	if (this == &other)
+		return (*this);
 	this->target = other.target;
 	this->is_signed = other.is_signed;
 	return (*this);

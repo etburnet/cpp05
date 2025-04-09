@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 09:34:42 by eburnet           #+#    #+#             */
-/*   Updated: 2025/03/27 14:01:50 by eburnet          ###   ########.fr       */
+/*   Updated: 2025/04/09 10:30:23 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ Bureaucrat::Bureaucrat(const Bureaucrat &other) : name(other.name)
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &other)
 {
+	if (this == &other)
+		return (*this);
 	this->grade = other.grade;
 	return (*this);
 }

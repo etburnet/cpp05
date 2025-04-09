@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:55:58 by eburnet           #+#    #+#             */
-/*   Updated: 2025/03/27 14:42:18 by eburnet          ###   ########.fr       */
+/*   Updated: 2025/04/09 10:30:36 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &oth
 
 PresidentialPardonForm & PresidentialPardonForm::operator=(const PresidentialPardonForm &other)
 {
+	if (this == &other)
+		return (*this);
 	this->is_signed = other.getIsSigned();
 	this->target = other.target;
 	return (*this);
