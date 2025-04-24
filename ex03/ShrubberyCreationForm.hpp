@@ -6,11 +6,11 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:56:27 by eburnet           #+#    #+#             */
-/*   Updated: 2025/03/27 13:06:11 by eburnet          ###   ########.fr       */
+/*   Updated: 2025/04/24 10:03:30 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AForm.hpp"
+#include "Bureaucrat.hpp"
 #include <string>
 #include <iostream>
 #include <fstream> 
@@ -24,6 +24,6 @@ class ShrubberyCreationForm : public AForm
 		ShrubberyCreationForm(const ShrubberyCreationForm &);
 		ShrubberyCreationForm & operator=(const ShrubberyCreationForm &);
 		~ShrubberyCreationForm();
-		void action(Bureaucrat const &b) const;
+		void execute(Bureaucrat const &executor) const;
 };
 

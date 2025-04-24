@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 09:34:42 by eburnet           #+#    #+#             */
-/*   Updated: 2025/04/09 10:30:23 by eburnet          ###   ########.fr       */
+/*   Updated: 2025/04/24 09:56:11 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,6 @@ void Bureaucrat::signForm(AForm &f)
 
 void Bureaucrat::executeForm(AForm const & form)
 {
-	form.action(*this);
+	form.execute(*this);
 	std::cout << this->name << " executed " << form.getName() << std::endl;
 }

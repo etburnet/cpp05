@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 16:38:47 by eburnet           #+#    #+#             */
-/*   Updated: 2025/04/09 10:31:42 by eburnet          ###   ########.fr       */
+/*   Updated: 2025/04/24 09:43:48 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,13 +74,3 @@ std::ostream& operator<<(std::ostream& os, const AForm &other)
 	return os; 
 }
 
-void AForm::execute(Bureaucrat const &executor) const
-{
-	if (this->is_signed == true)
-	{
-		if (executor.getGrade() > this->grade_exec)
-			throw AForm::GradeTooLowException();
-	}
-	else
-		throw AForm::NotSignedException();
-}

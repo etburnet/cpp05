@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:56:21 by eburnet           #+#    #+#             */
-/*   Updated: 2025/04/09 10:32:16 by eburnet          ###   ########.fr       */
+/*   Updated: 2025/04/24 10:03:26 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,19 +36,18 @@ RobotomyRequestForm & RobotomyRequestForm::operator=(const RobotomyRequestForm &
 	return (*this);
 }
 
-void RobotomyRequestForm::action(Bureaucrat const &b) const
+void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
-	try
+	if (this->is_signed == true)
 	{
-		this->execute(b);
-		std::cout << "vvvvvvvv" << std::endl;
-		if (rand() % 2 == 0)
-			std::cout << this->target << " has been robotomized" << std::endl;
-		else
-			std::cout << "Robotomy failed on " << this->target << std::endl;
+		if (executor.getGrade() > this->grade_exec)
+			throw AForm::GradeTooLowException();
 	}
-	catch(const std::exception& e)
-	{
-		throw ;
-	}
+	else
+		throw AForm::NotSignedException();
+	std::cout << "vvvvvvvv" << std::endl;
+	if (rand() % 2 == 0)
+		std::cout << this->target << " has been robotomized" << std::endl;
+	else
+		std::cout << "Robotomy failed on " << this->target << std::endl;
 }

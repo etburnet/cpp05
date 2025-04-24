@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:56:25 by eburnet           #+#    #+#             */
-/*   Updated: 2025/04/09 10:30:45 by eburnet          ###   ########.fr       */
+/*   Updated: 2025/04/24 10:03:31 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,26 +35,25 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator=(const ShrubberyCreation
 	return (*this);
 }
 
-void ShrubberyCreationForm::action(Bureaucrat const &b) const
+void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
-	try
+	if (this->is_signed == true)
 	{
-		this->execute(b);
-		std::string file_name = this->target + "_shrubbery.txt";
-		std::ofstream outfile (file_name.c_str());
-		outfile << "       _-_" << std::endl;
-		outfile << "    /~~   ~~\\" << std::endl;
-		outfile << " /~~         ~~\\" << std::endl;
-		outfile << "{               }" << std::endl;
-		outfile << " \\  _-     -_  /" << std::endl;
-		outfile << "   ~  \\\\ //  ~" << std::endl;
-		outfile << "_- -   | | _- _" << std::endl;
-		outfile << "  _ -  | |   -_" << std::endl;
-		outfile << "      // \\\\" << std::endl;
-		outfile.close();
+		if (executor.getGrade() > this->grade_exec)
+			throw AForm::GradeTooLowException();
 	}
-	catch(const std::exception& e)
-	{
-		throw ;
-	}
+	else
+		throw AForm::NotSignedException();
+	std::string file_name = this->target + "_shrubbery.txt";
+	std::ofstream outfile (file_name.c_str());
+	outfile << "       _-_" << std::endl;
+	outfile << "    /~~   ~~\\" << std::endl;
+	outfile << " /~~         ~~\\" << std::endl;
+	outfile << "{               }" << std::endl;
+	outfile << " \\  _-     -_  /" << std::endl;
+	outfile << "   ~  \\\\ //  ~" << std::endl;
+	outfile << "_- -   | | _- _" << std::endl;
+	outfile << "  _ -  | |   -_" << std::endl;
+	outfile << "      // \\\\" << std::endl;
+	outfile.close();
 }

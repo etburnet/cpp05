@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 14:55:58 by eburnet           #+#    #+#             */
-/*   Updated: 2025/04/09 10:30:36 by eburnet          ###   ########.fr       */
+/*   Updated: 2025/04/24 10:03:16 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,14 @@ PresidentialPardonForm & PresidentialPardonForm::operator=(const PresidentialPar
 	return (*this);
 }
 
-void PresidentialPardonForm::action(Bureaucrat const &b) const
+void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
-	try
+	if (this->is_signed == true)
 	{
-		this->execute(b);
-		std::cout << this->target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
+		if (executor.getGrade() > this->grade_exec)
+			throw AForm::GradeTooLowException();
 	}
-	catch(const std::exception& e)
-	{
-		throw ;
-	}
+	else
+		throw AForm::NotSignedException();
+	std::cout << this->target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
 }
-

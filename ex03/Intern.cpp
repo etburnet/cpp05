@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 14:45:37 by eburnet           #+#    #+#             */
-/*   Updated: 2025/04/09 10:32:03 by eburnet          ###   ########.fr       */
+/*   Updated: 2025/04/24 10:25:21 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ Intern::Intern(const Intern &other)
 
 Intern & Intern::operator=(const Intern &other)
 {
+	if (this == &other)
+		return (*this);
 	return(*this);
 }
 
